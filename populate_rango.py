@@ -2,7 +2,7 @@ import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',
         'tango_with_django_project.settings')
 
-
+import random
 
 
 import django
@@ -55,7 +55,8 @@ def populate():
     for cat, cat_data in cats.items():
         c = add_cat(cat, cat_data['views'], cat_data['likes'])
     for p in cat_data['pages']:
-        add_page(c, p['title'], p['url'])
+        view_rand = random.randint(6,200) 
+        add_page(c, p['title'], p['url'], view_rand)
 
 
 
